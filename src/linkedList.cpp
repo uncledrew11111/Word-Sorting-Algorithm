@@ -45,7 +45,7 @@ linkedList::~linkedList() {
     head = nullptr;
 }
 
-// adds node to linked list
+// adds node to linked list (auto sorts list)
 void linkedList::addNode(pair<int, string> instancePair) {
     // make bool val that is true until node is in correct spot
     bool truth = true;
@@ -113,4 +113,5 @@ vector<pair<int, string>> linkedList::linkedListVectorization() {
         current = current->next;
     }
     return vectorToReturn;
+
 }
