@@ -1,6 +1,7 @@
 #include "trie.h"
 #include <algorithm>
-#include <bits/ranges_algo.h>
+#include <vector>
+#include <utility>
 
 // trie constructor
 trie::trie() {
@@ -117,7 +118,6 @@ void trie::deleteWord(string word) {
     }
     // delete one of the word's instances
     finalNode->instanceCount--;
-    int newInstanceCount = finalNode->instanceCount;
     // continues deletion until there are no more of the unconnected letters left in the word
     while (finalNode != nullptr && finalNode->instanceCount < 1 && childCounter(finalNode) < 1) {
         node* tempFinalNode = finalNode;
