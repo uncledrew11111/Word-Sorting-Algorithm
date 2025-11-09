@@ -1,5 +1,9 @@
 # C++ Word Sorting Algorithm
 
+## Overview
+
+This project compares the performance of a Trie (Prefix Tree) and a Hash Table for storing, searching, and counting words in large text datasets. The goal is to determine which data structure performs better in terms of insertion speed, lookup time, and memory efficiency.
+
 ## Problem
 
 When dealing with really large text files like books, articles, or online discussions, it can take a long time to search for specific words and/or find how often they appear. A simple "scan through everything" approach becomes too slow as the file grows. We want to build a program that can store, search, and count words in a large dataset using efficient data structures.
@@ -19,11 +23,17 @@ We will know that we've solved the problem when:
 
 ## Data
 
-Currently, we plan to use free public domain books from Project Gutenberg. These texts will contain well over 100,000 words.
+We used public-domain books from Project Gutenberg. These texts will contain well over 100,000 words.
 
 **Link:** https://www.gutenberg.org/
 
 The dataset will have two fields: word (string) for each token and line_number (integer) for the word's position in the text. Before inserting into the hash/trie, we will remove punctuation, convert to lowercase, and split the text into individual words.
+
+Example files included:
+
+test.txt → small sample for quick testing
+
+cranford.txt → large dataset (~75k+ words) for benchmarking
 
 ## Tools
 
@@ -57,8 +67,21 @@ make
 To test the compiled program:
 
 ```bash
-make test
+./bin/word_sorting
 ```
+When prompted, enter a text file name such as:
+
+test.txt
+or 
+cranford.txt
+
+Use the menu:
+
+==== WordSort Menu ====
+1 Search for a word
+2 Show top 10 most frequent words
+3 Run lookup benchmark
+4 Exit
 
 To clean build files:
 
